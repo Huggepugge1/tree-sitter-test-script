@@ -31,10 +31,35 @@ module.exports = grammar({
     ),
 
     _expression: $ => choice(
+      $.declaration,
+      $.assignment,
       $.identifier,
       $.string,
       $.number,
       $.regex,
+    ),
+
+    declaration: $ => seq(
+      $.assignment_keyword,
+      $.identifier,
+      ':',
+      $.type,
+      '=',
+      $._expression,
+    ),
+
+    assignment_keyword: $ => choice('let', 'const'),
+
+    type: $ => choice(
+      'string',
+      'int',
+      'regex',
+    ),
+
+    assignment: $ => seq(
+      $.identifier,
+      '=',
+      $._expression,
     ),
 
     block: $ => seq(
