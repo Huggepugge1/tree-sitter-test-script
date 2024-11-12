@@ -28,6 +28,7 @@ module.exports = grammar({
       ),
       $.block,
       $.comment,
+      $.for_loop,
     ),
 
     _expression: $ => choice(
