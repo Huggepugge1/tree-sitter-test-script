@@ -41,6 +41,7 @@ module.exports = grammar({
       $.binary_expression,
       $.function_call,
       $.built_in_function_call,
+      $.type_cast,
     ),
 
     function_call: $ => seq(
@@ -74,6 +75,12 @@ module.exports = grammar({
       prec.left(2, seq($._expression, $.division, $._expression)),
       prec.left(1, seq($._expression, $.addition, $._expression)),
       prec.left(1, seq($._expression, $.subtraction, $._expression)),
+    ),
+
+    type_cast: $ => seq(
+      $._expression,
+      $.type_cast_operator,
+      $.type,
     ),
 
     declaration: $ => seq(
@@ -139,6 +146,8 @@ module.exports = grammar({
     division: $ => '/',
     colon: $ => ':',
     assignment_operator: $ => '=',
+
+    type_cast_operator: $ => 'as',
 
     semicolon: $ => ';',
 

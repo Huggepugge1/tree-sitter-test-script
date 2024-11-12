@@ -30,6 +30,7 @@ dist/
 /examples/*/
 
 # Grammar volatiles
+*.wasm
 *.obj
 *.o
 
