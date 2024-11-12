@@ -108,8 +108,16 @@ module.exports = grammar({
     colon: $ => ':',
     assignment_operator: $ => '=',
 
-    semicolon: $ => ';',
+    operator: $ => choice(
+      $.addition,
+      $.subtraction,
+      $.multiplication,
+      $.division,
+      $.colon,
+      $.assignment_operator,
+    ),
 
+    semicolon: $ => ';',
 
     open_paren: $ => '(',
     close_paren: $ => ')',

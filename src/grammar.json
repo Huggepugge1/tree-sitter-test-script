@@ -372,6 +372,35 @@
       "type": "STRING",
       "value": "="
     },
+    "operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "addition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "subtraction"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "multiplication"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "division"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "colon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "assignment_operator"
+        }
+      ]
+    },
     "semicolon": {
       "type": "STRING",
       "value": ";"
