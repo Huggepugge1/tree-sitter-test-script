@@ -46,5 +46,7 @@ module.exports = grammar({
     string: $ => /"([^"\\]|\\.)*"/,
     number: $ => /\d+/,
     regex: $ => /`[^`]*`/,
+
+    comment: $ => /\/\/.*$/
   }
 });

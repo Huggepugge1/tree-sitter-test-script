@@ -112,6 +112,10 @@
     "regex": {
       "type": "PATTERN",
       "value": "`[^`]*`"
+    },
+    "comment": {
+      "type": "PATTERN",
+      "value": "\\/\\/.*$"
     }
   },
   "extras": [
