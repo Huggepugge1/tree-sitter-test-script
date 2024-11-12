@@ -61,13 +61,6 @@ module.exports = grammar({
     colon: $ => ':',
     assignment_operator: $ => '=',
 
-    binary_operator: $ => choice(
-      '+',
-      '-',
-      '*',
-      '/',
-    ),
-
     type: $ => choice(
       'string',
       'int',
