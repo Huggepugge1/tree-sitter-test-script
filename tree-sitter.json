@@ -1,0 +1,35 @@
+{
+  "grammars": [
+    {
+      "name": "test_script",
+      "camelcase": "TestScript",
+      "scope": "source.test_script",
+      "file-types": [
+        ".tesc"
+      ],
+      "injection-regex": "^test_script$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "TestScript grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Hugo Lindström",
+        "email": "Huggepugge1@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/Huggepugge1/test-script-parser.git"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
