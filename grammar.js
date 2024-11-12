@@ -15,16 +15,16 @@ module.exports = grammar({
 
     test: $ => seq(
       $.identifier,
-      '(',
+      $.open_paren,
       $.string,
-      ')',
+      $.close_paren,
       $._statement
     ),
 
     _statement: $ => choice(
       seq(
         $._expression,
-        ';',
+        $.semicolon,
       ),
       $.block,
       $.comment,
@@ -41,10 +41,10 @@ module.exports = grammar({
     ),
 
     binary_expression: $ => choice(
-      prec.left(2, seq($._expression, '*', $._expression)),
-      prec.left(2, seq($._expression, '/', $._expression)),
-      prec.left(1, seq($._expression, '+', $._expression)),
-      prec.left(1, seq($._expression, '-', $._expression)),
+      prec.left(2, seq($._expression, $.multiplication, $._expression)),
+      prec.left(2, seq($._expression, $.division, $._expression)),
+      prec.left(1, seq($._expression, $.addition, $._expression)),
+      prec.left(1, seq($._expression, $.subtraction, $._expression)),
     ),
 
     declaration: $ => seq(
@@ -58,9 +58,6 @@ module.exports = grammar({
     
     assignment_keyword: $ => choice('let', 'const'),
 
-    colon: $ => ':',
-    assignment_operator: $ => '=',
-
     type: $ => choice(
       'string',
       'int',
@@ -72,6 +69,23 @@ module.exports = grammar({
       $.assignment_operator,
       $._expression,
     ),
+
+    for_loop: $ => seq(
+      $.for_keyword,
+      $.iterable_assignment,
+      $._statement,
+    ),
+
+    iterable_assignment: $ => seq(
+      $.identifier,
+      $.colon,
+      $.type,
+      $.in_operator,
+      $._expression,
+    ),
+
+    for_keyword: $ => 'for',
+    in_operator: $ => 'in',
 
     block: $ => seq(
       '{',
@@ -85,5 +99,21 @@ module.exports = grammar({
     regex: $ => /`[^`]*`/,
 
     comment: $ => /\/\/.*/,
+
+    // Operators, semicolon, blocks, etc.
+    addition: $ => '+',
+    subtraction: $ => '-',
+    multiplication: $ => '*',
+    division: $ => '/',
+    colon: $ => ':',
+    assignment_operator: $ => '=',
+
+    semicolon: $ => ';',
+
+
+    open_paren: $ => '(',
+    close_paren: $ => ')',
+    open_brace: $ => '{',
+    close_brace: $ => '}',
   }
 });

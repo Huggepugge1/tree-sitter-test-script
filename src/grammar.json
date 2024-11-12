@@ -17,16 +17,16 @@
           "name": "identifier"
         },
         {
-          "type": "STRING",
-          "value": "("
+          "type": "SYMBOL",
+          "name": "open_paren"
         },
         {
           "type": "SYMBOL",
           "name": "string"
         },
         {
-          "type": "STRING",
-          "value": ")"
+          "type": "SYMBOL",
+          "name": "close_paren"
         },
         {
           "type": "SYMBOL",
@@ -45,8 +45,8 @@
               "name": "_expression"
             },
             {
-              "type": "STRING",
-              "value": ";"
+              "type": "SYMBOL",
+              "name": "semicolon"
             }
           ]
         },
@@ -107,8 +107,8 @@
                 "name": "_expression"
               },
               {
-                "type": "STRING",
-                "value": "*"
+                "type": "SYMBOL",
+                "name": "multiplication"
               },
               {
                 "type": "SYMBOL",
@@ -128,8 +128,8 @@
                 "name": "_expression"
               },
               {
-                "type": "STRING",
-                "value": "/"
+                "type": "SYMBOL",
+                "name": "division"
               },
               {
                 "type": "SYMBOL",
@@ -149,8 +149,8 @@
                 "name": "_expression"
               },
               {
-                "type": "STRING",
-                "value": "+"
+                "type": "SYMBOL",
+                "name": "addition"
               },
               {
                 "type": "SYMBOL",
@@ -170,8 +170,8 @@
                 "name": "_expression"
               },
               {
-                "type": "STRING",
-                "value": "-"
+                "type": "SYMBOL",
+                "name": "subtraction"
               },
               {
                 "type": "SYMBOL",
@@ -224,14 +224,6 @@
         }
       ]
     },
-    "colon": {
-      "type": "STRING",
-      "value": ":"
-    },
-    "assignment_operator": {
-      "type": "STRING",
-      "value": "="
-    },
     "type": {
       "type": "CHOICE",
       "members": [
@@ -265,6 +257,56 @@
           "name": "_expression"
         }
       ]
+    },
+    "for_loop": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "for_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "iterable_assignment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_statement"
+        }
+      ]
+    },
+    "iterable_assignment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "colon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "in_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
+        }
+      ]
+    },
+    "for_keyword": {
+      "type": "STRING",
+      "value": "for"
+    },
+    "in_operator": {
+      "type": "STRING",
+      "value": "in"
     },
     "block": {
       "type": "SEQ",
@@ -305,6 +347,50 @@
     "comment": {
       "type": "PATTERN",
       "value": "\\/\\/.*"
+    },
+    "addition": {
+      "type": "STRING",
+      "value": "+"
+    },
+    "subtraction": {
+      "type": "STRING",
+      "value": "-"
+    },
+    "multiplication": {
+      "type": "STRING",
+      "value": "*"
+    },
+    "division": {
+      "type": "STRING",
+      "value": "/"
+    },
+    "colon": {
+      "type": "STRING",
+      "value": ":"
+    },
+    "assignment_operator": {
+      "type": "STRING",
+      "value": "="
+    },
+    "semicolon": {
+      "type": "STRING",
+      "value": ";"
+    },
+    "open_paren": {
+      "type": "STRING",
+      "value": "("
+    },
+    "close_paren": {
+      "type": "STRING",
+      "value": ")"
+    },
+    "open_brace": {
+      "type": "STRING",
+      "value": "{"
+    },
+    "close_brace": {
+      "type": "STRING",
+      "value": "}"
     }
   },
   "extras": [

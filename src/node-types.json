@@ -56,6 +56,10 @@
       "required": true,
       "types": [
         {
+          "type": "addition",
+          "named": true
+        },
+        {
           "type": "assignment",
           "named": true
         },
@@ -68,7 +72,15 @@
           "named": true
         },
         {
+          "type": "division",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "multiplication",
           "named": true
         },
         {
@@ -81,6 +93,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "subtraction",
           "named": true
         }
       ]
@@ -124,6 +140,10 @@
         },
         {
           "type": "regex",
+          "named": true
+        },
+        {
+          "type": "semicolon",
           "named": true
         },
         {
@@ -225,6 +245,10 @@
           "named": true
         },
         {
+          "type": "close_paren",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -241,7 +265,15 @@
           "named": true
         },
         {
+          "type": "open_paren",
+          "named": true
+        },
+        {
           "type": "regex",
+          "named": true
+        },
+        {
+          "type": "semicolon",
           "named": true
         },
         {
@@ -257,35 +289,15 @@
     "fields": {}
   },
   {
-    "type": "(",
-    "named": false
-  },
-  {
-    "type": ")",
-    "named": false
-  },
-  {
-    "type": "*",
-    "named": false
-  },
-  {
-    "type": "+",
-    "named": false
-  },
-  {
-    "type": "-",
-    "named": false
-  },
-  {
-    "type": "/",
-    "named": false
-  },
-  {
-    "type": ";",
-    "named": false
+    "type": "addition",
+    "named": true
   },
   {
     "type": "assignment_operator",
+    "named": true
+  },
+  {
+    "type": "close_paren",
     "named": true
   },
   {
@@ -301,6 +313,10 @@
     "named": false
   },
   {
+    "type": "division",
+    "named": true
+  },
+  {
     "type": "identifier",
     "named": true
   },
@@ -313,10 +329,18 @@
     "named": false
   },
   {
+    "type": "multiplication",
+    "named": true
+  },
+  {
     "type": "number",
     "named": true
   },
   {
+    "type": "open_paren",
+    "named": true
+  },
+  {
     "type": "regex",
     "named": true
   },
@@ -325,12 +349,20 @@
     "named": false
   },
   {
+    "type": "semicolon",
+    "named": true
+  },
+  {
     "type": "string",
     "named": true
   },
   {
     "type": "string",
     "named": false
+  },
+  {
+    "type": "subtraction",
+    "named": true
   },
   {
     "type": "{",
