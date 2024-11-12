@@ -1,5 +1,52 @@
 [
   {
+    "type": "argument_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "regex",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "assignment",
     "named": true,
     "fields": {},
@@ -20,7 +67,15 @@
           "named": true
         },
         {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
           "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -68,11 +123,19 @@
           "named": true
         },
         {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
           "type": "declaration",
           "named": true
         },
         {
           "type": "division",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -123,6 +186,10 @@
           "named": true
         },
         {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
           "type": "close_brace",
           "named": true
         },
@@ -136,6 +203,10 @@
         },
         {
           "type": "for_loop",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -166,6 +237,38 @@
     }
   },
   {
+    "type": "built_in_function",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "built_in_function_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "argument_list",
+          "named": true
+        },
+        {
+          "type": "built_in_function",
+          "named": true
+        },
+        {
+          "type": "close_paren",
+          "named": true
+        },
+        {
+          "type": "open_paren",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "declaration",
     "named": true,
     "fields": {},
@@ -190,11 +293,19 @@
           "named": true
         },
         {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
           "type": "colon",
           "named": true
         },
         {
           "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -241,6 +352,10 @@
           "named": true
         },
         {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -254,6 +369,10 @@
         },
         {
           "type": "for_loop",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -284,6 +403,33 @@
     }
   },
   {
+    "type": "function_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "argument_list",
+          "named": true
+        },
+        {
+          "type": "close_paren",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "open_paren",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "iterable_assignment",
     "named": true,
     "fields": {},
@@ -300,11 +446,19 @@
           "named": true
         },
         {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
           "type": "colon",
           "named": true
         },
         {
           "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -371,6 +525,10 @@
           "named": true
         },
         {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
           "type": "close_paren",
           "named": true
         },
@@ -384,6 +542,10 @@
         },
         {
           "type": "for_loop",
+          "named": true
+        },
+        {
+          "type": "function_call",
           "named": true
         },
         {
@@ -417,6 +579,10 @@
     "type": "type",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": ",",
+    "named": false
   },
   {
     "type": "addition",
@@ -463,6 +629,10 @@
     "named": true
   },
   {
+    "type": "input",
+    "named": false
+  },
+  {
     "type": "int",
     "named": false
   },
@@ -485,6 +655,18 @@
   {
     "type": "open_paren",
     "named": true
+  },
+  {
+    "type": "output",
+    "named": false
+  },
+  {
+    "type": "print",
+    "named": false
+  },
+  {
+    "type": "println",
+    "named": false
   },
   {
     "type": "regex",

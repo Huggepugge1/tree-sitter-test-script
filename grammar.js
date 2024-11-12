@@ -39,6 +39,8 @@ module.exports = grammar({
       $.number,
       $.regex,
       $.binary_expression,
+      $.function_call,
+      $.built_in_function_call,
     ),
 
     function_call: $ => seq(
