@@ -53,6 +53,13 @@ module.exports = grammar({
     _colon: $ => ':',
     _assignment_operator: $ => '=',
 
+    _operator: $ => choice(
+      '+',
+      '-',
+      '*',
+      '/',
+    ),
+
     type: $ => choice(
       'string',
       'int',

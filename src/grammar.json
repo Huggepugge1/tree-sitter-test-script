@@ -139,6 +139,27 @@
       "type": "STRING",
       "value": "="
     },
+    "_operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "+"
+        },
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "STRING",
+          "value": "*"
+        },
+        {
+          "type": "STRING",
+          "value": "/"
+        }
+      ]
+    },
     "type": {
       "type": "CHOICE",
       "members": [
