@@ -42,18 +42,18 @@ module.exports = grammar({
     declaration: $ => seq(
       $.assignment_keyword,
       $.identifier,
-      $._colon,
+      $.colon,
       $.type,
-      $._assignment_operator,
+      $.assignment_operator,
       $._expression,
     ),
     
     assignment_keyword: $ => choice('let', 'const'),
 
-    _colon: $ => ':',
-    _assignment_operator: $ => '=',
+    colon: $ => ':',
+    assignment_operator: $ => '=',
 
-    _operator: $ => choice(
+    operator: $ => choice(
       '+',
       '-',
       '*',
@@ -68,7 +68,7 @@ module.exports = grammar({
 
     assignment: $ => seq(
       $.identifier,
-      $._assignment_operator,
+      $.assignment_operator,
       $._expression,
     ),
 

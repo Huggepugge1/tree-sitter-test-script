@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "assignment_operator",
+          "named": true
+        },
+        {
           "type": "declaration",
           "named": true
         },
@@ -96,6 +100,14 @@
         },
         {
           "type": "assignment_keyword",
+          "named": true
+        },
+        {
+          "type": "assignment_operator",
+          "named": true
+        },
+        {
+          "type": "colon",
           "named": true
         },
         {
@@ -198,16 +210,16 @@
     "named": false
   },
   {
-    "type": ":",
-    "named": false
-  },
-  {
     "type": ";",
     "named": false
   },
   {
-    "type": "=",
-    "named": false
+    "type": "assignment_operator",
+    "named": true
+  },
+  {
+    "type": "colon",
+    "named": true
   },
   {
     "type": "comment",

@@ -102,7 +102,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_colon"
+          "name": "colon"
         },
         {
           "type": "SYMBOL",
@@ -110,7 +110,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_assignment_operator"
+          "name": "assignment_operator"
         },
         {
           "type": "SYMBOL",
@@ -131,15 +131,15 @@
         }
       ]
     },
-    "_colon": {
+    "colon": {
       "type": "STRING",
       "value": ":"
     },
-    "_assignment_operator": {
+    "assignment_operator": {
       "type": "STRING",
       "value": "="
     },
-    "_operator": {
+    "operator": {
       "type": "CHOICE",
       "members": [
         {
@@ -186,7 +186,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_assignment_operator"
+          "name": "assignment_operator"
         },
         {
           "type": "SYMBOL",
