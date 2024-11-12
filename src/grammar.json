@@ -53,6 +53,10 @@
         {
           "type": "SYMBOL",
           "name": "block"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },
@@ -115,7 +119,7 @@
     },
     "comment": {
       "type": "PATTERN",
-      "value": "\\/\\/.*$"
+      "value": "\\/\\/.*"
     }
   },
   "extras": [

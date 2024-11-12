@@ -27,6 +27,7 @@ module.exports = grammar({
         ';',
       ),
       $.block,
+      $.comment,
     ),
 
     _expression: $ => choice(
@@ -47,6 +48,6 @@ module.exports = grammar({
     number: $ => /\d+/,
     regex: $ => /`[^`]*`/,
 
-    comment: $ => /\/\/.*$/
+    comment: $ => /\/\/.*/,
   }
 });
