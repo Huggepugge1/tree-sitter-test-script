@@ -37,7 +37,14 @@ module.exports = grammar({
       $.string,
       $.number,
       $.regex,
+      $.binary_expression,
     ),
+
+    binary_expression: $ => prec.left(2, seq(
+      field('left', $._expression),
+      field('operator', $.binary_operator),
+      field('right', $._expression),
+    )),
 
     declaration: $ => seq(
       $.assignment_keyword,
@@ -53,7 +60,7 @@ module.exports = grammar({
     colon: $ => ':',
     assignment_operator: $ => '=',
 
-    operator: $ => choice(
+    binary_operator: $ => choice(
       '+',
       '-',
       '*',
