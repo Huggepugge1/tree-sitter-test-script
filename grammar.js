@@ -41,6 +41,32 @@ module.exports = grammar({
       $.binary_expression,
     ),
 
+    function_call: $ => seq(
+      $.identifier,
+      $.open_paren,
+      optional($.argument_list),
+      $.close_paren,
+    ),
+    
+    built_in_function_call: $ => seq(
+      $.built_in_function,
+      $.open_paren,
+      optional($.argument_list),
+      $.close_paren,
+    ),
+
+    argument_list: $ => seq(
+      $._expression,
+      repeat(seq(',', $._expression)),
+    ),
+
+    built_in_function: $ => choice(
+      'print',
+      'println',
+      'input',
+      'output',
+    ),
+
     binary_expression: $ => choice(
       prec.left(2, seq($._expression, $.multiplication, $._expression)),
       prec.left(2, seq($._expression, $.division, $._expression)),
