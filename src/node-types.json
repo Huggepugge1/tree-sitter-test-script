@@ -161,6 +161,14 @@
         {
           "type": "subtraction",
           "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "type_cast_operator",
+          "named": true
         }
       ]
     }
@@ -705,6 +713,10 @@
   },
   {
     "type": "subtraction",
+    "named": true
+  },
+  {
+    "type": "type_cast_operator",
     "named": true
   }
 ]

@@ -41,7 +41,6 @@ module.exports = grammar({
       $.binary_expression,
       $.function_call,
       $.built_in_function_call,
-      $.type_cast,
     ),
 
     function_call: $ => seq(
@@ -71,16 +70,11 @@ module.exports = grammar({
     ),
 
     binary_expression: $ => choice(
+      prec.left(3, seq($._expression, $.type_cast_operator, $.type)),
       prec.left(2, seq($._expression, $.multiplication, $._expression)),
       prec.left(2, seq($._expression, $.division, $._expression)),
       prec.left(1, seq($._expression, $.addition, $._expression)),
       prec.left(1, seq($._expression, $.subtraction, $._expression)),
-    ),
-
-    type_cast: $ => seq(
-      $._expression,
-      $.type_cast_operator,
-      $.type,
     ),
 
     declaration: $ => seq(

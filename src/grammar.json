@@ -214,6 +214,27 @@
       "members": [
         {
           "type": "PREC_LEFT",
+          "value": 3,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_expression"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "type_cast_operator"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "type"
+              }
+            ]
+          }
+        },
+        {
+          "type": "PREC_LEFT",
           "value": 2,
           "content": {
             "type": "SEQ",
@@ -495,6 +516,10 @@
     "assignment_operator": {
       "type": "STRING",
       "value": "="
+    },
+    "type_cast_operator": {
+      "type": "STRING",
+      "value": "as"
     },
     "semicolon": {
       "type": "STRING",
