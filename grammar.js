@@ -123,8 +123,8 @@ module.exports = grammar({
     ),
 
     identifier: $ => /[a-zA-Z_][\w\d_]*/,
-    function: $ => $.identifier,
-    test_identifier: $ => $.identifier,
+    test_identifier: $ => /[a-zA-Z_][\w\d_]*/,
+    function: $ => /[a-zA-Z_][\w\d_]*/,
 
     string: $ => /"([^"\\]|\\.)*"/,
     number: $ => /\d+/,

@@ -448,13 +448,13 @@
       "type": "PATTERN",
       "value": "[a-zA-Z_][\\w\\d_]*"
     },
-    "function": {
-      "type": "SYMBOL",
-      "name": "identifier"
-    },
     "test_identifier": {
-      "type": "SYMBOL",
-      "name": "identifier"
+      "type": "PATTERN",
+      "value": "[a-zA-Z_][\\w\\d_]*"
+    },
+    "function": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_][\\w\\d_]*"
     },
     "string": {
       "type": "PATTERN",

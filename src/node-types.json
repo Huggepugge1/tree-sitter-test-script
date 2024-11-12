@@ -405,17 +405,7 @@
   {
     "type": "function",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "function_call",
@@ -443,6 +433,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "iterable_assignment",
@@ -597,17 +592,7 @@
   {
     "type": "test_identifier",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "type",
@@ -652,10 +637,6 @@
   },
   {
     "type": "for_keyword",
-    "named": true
-  },
-  {
-    "type": "identifier",
     "named": true
   },
   {
