@@ -40,11 +40,12 @@ module.exports = grammar({
       $.binary_expression,
     ),
 
-    binary_expression: $ => prec.left(2, seq(
-      field('left', $._expression),
-      field('operator', $.binary_operator),
-      field('right', $._expression),
-    )),
+    binary_expression: $ => choice(
+      prec.left(2, seq($._expression, '*', $._expression)),
+      prec.left(2, seq($._expression, '/', $._expression)),
+      prec.left(1, seq($._expression, '+', $._expression)),
+      prec.left(1, seq($._expression, '-', $._expression)),
+    ),
 
     declaration: $ => seq(
       $.assignment_keyword,
