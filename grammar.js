@@ -88,9 +88,9 @@ module.exports = grammar({
     in_operator: $ => 'in',
 
     block: $ => seq(
-      '{',
+      $.open_brace,
       repeat($._statement),
-      '}',
+      $.close_brace,
     ),
 
     identifier: $ => /[a-zA-Z_][\w\d_]*/,
@@ -107,15 +107,6 @@ module.exports = grammar({
     division: $ => '/',
     colon: $ => ':',
     assignment_operator: $ => '=',
-
-    operator: $ => choice(
-      $.addition,
-      $.subtraction,
-      $.multiplication,
-      $.division,
-      $.colon,
-      $.assignment_operator,
-    ),
 
     semicolon: $ => ';',
 

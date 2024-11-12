@@ -312,8 +312,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "{"
+          "type": "SYMBOL",
+          "name": "open_brace"
         },
         {
           "type": "REPEAT",
@@ -323,8 +323,8 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "}"
+          "type": "SYMBOL",
+          "name": "close_brace"
         }
       ]
     },
@@ -371,35 +371,6 @@
     "assignment_operator": {
       "type": "STRING",
       "value": "="
-    },
-    "operator": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "addition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "subtraction"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "multiplication"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "division"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "colon"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "assignment_operator"
-        }
-      ]
     },
     "semicolon": {
       "type": "STRING",
