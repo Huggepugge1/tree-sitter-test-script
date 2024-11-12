@@ -403,6 +403,21 @@
     }
   },
   {
+    "type": "function",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "function_call",
     "named": true,
     "fields": {},
@@ -419,7 +434,7 @@
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "function",
           "named": true
         },
         {

@@ -110,7 +110,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "function"
         },
         {
           "type": "SYMBOL",
@@ -447,6 +447,10 @@
     "identifier": {
       "type": "PATTERN",
       "value": "[a-zA-Z_][\\w\\d_]*"
+    },
+    "function": {
+      "type": "SYMBOL",
+      "name": "identifier"
     },
     "string": {
       "type": "PATTERN",

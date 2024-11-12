@@ -44,12 +44,12 @@ module.exports = grammar({
     ),
 
     function_call: $ => seq(
-      $.identifier,
+      $.function,
       $.open_paren,
       optional($.argument_list),
       $.close_paren,
     ),
-    
+
     built_in_function_call: $ => seq(
       $.built_in_function,
       $.open_paren,
@@ -123,6 +123,8 @@ module.exports = grammar({
     ),
 
     identifier: $ => /[a-zA-Z_][\w\d_]*/,
+    function: $ => $.identifier,
+
     string: $ => /"([^"\\]|\\.)*"/,
     number: $ => /\d+/,
     regex: $ => /`[^`]*`/,
