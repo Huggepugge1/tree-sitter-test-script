@@ -14,7 +14,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "test_identifier"
         },
         {
           "type": "SYMBOL",
@@ -449,6 +449,10 @@
       "value": "[a-zA-Z_][\\w\\d_]*"
     },
     "function": {
+      "type": "SYMBOL",
+      "name": "identifier"
+    },
+    "test_identifier": {
       "type": "SYMBOL",
       "name": "identifier"
     },

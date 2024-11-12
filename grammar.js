@@ -14,7 +14,7 @@ module.exports = grammar({
     source_file: $ => repeat($.test),
 
     test: $ => seq(
-      $.identifier,
+      $.test_identifier,
       $.open_paren,
       $.string,
       $.close_paren,
@@ -124,6 +124,7 @@ module.exports = grammar({
 
     identifier: $ => /[a-zA-Z_][\w\d_]*/,
     function: $ => $.identifier,
+    test_identifier: $ => $.identifier,
 
     string: $ => /"([^"\\]|\\.)*"/,
     number: $ => /\d+/,
