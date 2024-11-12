@@ -1,4 +1,3 @@
 test1("./test") {
-	`regex`;
-	// thatohetuhth
+	let x: int = 1;
 }
