@@ -1,5 +1,8 @@
 test1("./test") {
-	let x: int = 1;
-	input(x as string);
-	function(x as string);
+    let x: bool = true;
+    if x {
+	println("Hello, World!");
+    } else {
+	println("Goodbye, World!");
+    }
 }

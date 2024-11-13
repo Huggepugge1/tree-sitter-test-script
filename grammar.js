@@ -29,9 +29,10 @@ module.exports = grammar({
       $.block,
       $.comment,
       $.for_loop,
+      $.if_statement,
     ),
 
-    _expression: $ => choice(
+    _expression: $ => prec.left(2, choice(
       $.declaration,
       $.assignment,
       $.identifier,
@@ -41,7 +42,10 @@ module.exports = grammar({
       $.binary_expression,
       $.function_call,
       $.built_in_function_call,
-    ),
+
+      $.block,
+      $.if_statement,
+    )),
 
     function_call: $ => seq(
       $.function,
@@ -92,6 +96,7 @@ module.exports = grammar({
       'string',
       'int',
       'regex',
+      'bool',
     ),
 
     assignment: $ => seq(
@@ -99,6 +104,25 @@ module.exports = grammar({
       $.assignment_operator,
       $._expression,
     ),
+
+    if_statement: $ => prec.left(1, seq(
+      $.if_keyword,
+      $._expression,
+      $._expression,
+      optional($.else_statement),
+    )),
+
+    else_statement: $ => prec.left(1, choice(
+      seq(
+        $.else_keyword,
+        $.if_statement,
+        optional($.else_statement),
+      ),
+      seq(
+        $.else_keyword,
+        $._expression,
+      ),
+    )),
 
     for_loop: $ => seq(
       $.for_keyword,
@@ -114,6 +138,8 @@ module.exports = grammar({
       $._expression,
     ),
 
+    if_keyword: $ => 'if',
+    else_keyword: $ => 'else',
     for_keyword: $ => 'for',
     in_operator: $ => 'in',
 
@@ -130,6 +156,7 @@ module.exports = grammar({
     string: $ => /"([^"\\]|\\.)*"/,
     number: $ => /\d+/,
     regex: $ => /`[^`]*`/,
+    bool: $ => choice('true', 'false'),
 
     comment: $ => /\/\/.*/,
 
