@@ -32,15 +32,13 @@ module.exports = grammar({
       $.if_statement,
     ),
 
-    _expression: $ => prec.left(7, choice(
+    _expression: $ => prec.left(2, choice(
       $.declaration,
       $.assignment,
       $.identifier,
       $.string,
       $.number,
       $.regex,
-      $.bool,
-      $.unary_expression,
       $.binary_expression,
       $.function_call,
       $.built_in_function_call,
@@ -76,27 +74,16 @@ module.exports = grammar({
     ),
 
     unary_expression: $ => choice(
-      prec.left(6, seq($.not_operator, $._expression)),
-      prec.left(6, seq($.subtraction, $._expression)),
+      prec.left(4, seq($.not_operator, $._expression)),
+      prec.left(3, seq($.open_paren, $._expression, $.close_paren)),
     ),
 
     binary_expression: $ => choice(
-      prec.left(5, seq($._expression, $.type_cast_operator, $.type)),
-      prec.left(4, seq($._expression, $.multiplication, $._expression)),
-      prec.left(4, seq($._expression, $.division, $._expression)),
-      prec.left(3, seq($._expression, $.addition, $._expression)),
-      prec.left(3, seq($._expression, $.subtraction, $._expression)),
-
-      prec.left(2, seq($._expression, $.equality_operator, $._expression)),
-      prec.left(2, seq($._expression, $.not_equal_operator, $._expression)),
-      prec.left(2, seq($._expression, $.greater_than_operator, $._expression)),
-      prec.left(2, seq($._expression, $.less_than_operator, $._expression)),
-      prec.left(2, seq($._expression, $.greater_than_or_equal_operator, $._expression)),
-      prec.left(2, seq($._expression, $.less_than_or_equal_operator, $._expression)),
-
-      prec.left(1, seq($._expression, $.and_operator, $._expression)),
-      prec.left(1, seq($._expression, $.or_operator, $._expression)),
-      
+      prec.left(3, seq($._expression, $.type_cast_operator, $.type)),
+      prec.left(2, seq($._expression, $.multiplication, $._expression)),
+      prec.left(2, seq($._expression, $.division, $._expression)),
+      prec.left(1, seq($._expression, $.addition, $._expression)),
+      prec.left(1, seq($._expression, $.subtraction, $._expression)),
     ),
 
     declaration: $ => seq(
@@ -123,14 +110,14 @@ module.exports = grammar({
       $._expression,
     ),
 
-    if_statement: $ => prec.left(8, seq(
+    if_statement: $ => prec.left(1, seq(
       $.if_keyword,
       $._expression,
       $._expression,
       optional($.else_statement),
     )),
 
-    else_statement: $ => prec.left(8, choice(
+    else_statement: $ => prec.left(1, choice(
       seq(
         $.else_keyword,
         $.if_statement,

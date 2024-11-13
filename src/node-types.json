@@ -20,6 +20,10 @@
           "named": true
         },
         {
+          "type": "bool",
+          "named": true
+        },
+        {
           "type": "built_in_function_call",
           "named": true
         },
@@ -49,6 +53,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -79,6 +87,10 @@
           "named": true
         },
         {
+          "type": "bool",
+          "named": true
+        },
+        {
           "type": "built_in_function_call",
           "named": true
         },
@@ -108,6 +120,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -131,6 +147,10 @@
           "named": true
         },
         {
+          "type": "and_operator",
+          "named": true
+        },
+        {
           "type": "assignment",
           "named": true
         },
@@ -140,6 +160,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -155,7 +179,19 @@
           "named": true
         },
         {
+          "type": "equality_operator",
+          "named": true
+        },
+        {
           "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "greater_than_operator",
+          "named": true
+        },
+        {
+          "type": "greater_than_or_equal_operator",
           "named": true
         },
         {
@@ -167,11 +203,27 @@
           "named": true
         },
         {
+          "type": "less_than_operator",
+          "named": true
+        },
+        {
+          "type": "less_than_or_equal_operator",
+          "named": true
+        },
+        {
           "type": "multiplication",
           "named": true
         },
         {
+          "type": "not_equal_operator",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "or_operator",
           "named": true
         },
         {
@@ -192,6 +244,10 @@
         },
         {
           "type": "type_cast_operator",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -215,6 +271,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -268,9 +328,18 @@
         {
           "type": "string",
           "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "bool",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "built_in_function",
@@ -333,6 +402,10 @@
           "named": true
         },
         {
+          "type": "bool",
+          "named": true
+        },
+        {
           "type": "built_in_function_call",
           "named": true
         },
@@ -371,6 +444,10 @@
         {
           "type": "type",
           "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
         }
       ]
     }
@@ -393,6 +470,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -434,6 +515,10 @@
         {
           "type": "string",
           "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
         }
       ]
     }
@@ -456,6 +541,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -508,6 +597,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -571,6 +664,10 @@
           "named": true
         },
         {
+          "type": "bool",
+          "named": true
+        },
+        {
           "type": "built_in_function_call",
           "named": true
         },
@@ -609,6 +706,10 @@
         {
           "type": "string",
           "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
         }
       ]
     }
@@ -631,6 +732,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -676,6 +781,10 @@
         {
           "type": "type",
           "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
         }
       ]
     }
@@ -714,6 +823,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -771,6 +884,10 @@
         {
           "type": "test_identifier",
           "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
         }
       ]
     }
@@ -786,11 +903,86 @@
     "fields": {}
   },
   {
+    "type": "unary_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "not_operator",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "regex",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "subtraction",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": ",",
     "named": false
   },
   {
     "type": "addition",
+    "named": true
+  },
+  {
+    "type": "and_operator",
     "named": true
   },
   {
@@ -830,7 +1022,23 @@
     "named": true
   },
   {
+    "type": "equality_operator",
+    "named": true
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
     "type": "for_keyword",
+    "named": true
+  },
+  {
+    "type": "greater_than_operator",
+    "named": true
+  },
+  {
+    "type": "greater_than_or_equal_operator",
     "named": true
   },
   {
@@ -850,11 +1058,27 @@
     "named": false
   },
   {
+    "type": "less_than_operator",
+    "named": true
+  },
+  {
+    "type": "less_than_or_equal_operator",
+    "named": true
+  },
+  {
     "type": "let",
     "named": false
   },
   {
     "type": "multiplication",
+    "named": true
+  },
+  {
+    "type": "not_equal_operator",
+    "named": true
+  },
+  {
+    "type": "not_operator",
     "named": true
   },
   {
@@ -867,6 +1091,10 @@
   },
   {
     "type": "open_paren",
+    "named": true
+  },
+  {
+    "type": "or_operator",
     "named": true
   },
   {
@@ -895,15 +1123,19 @@
   },
   {
     "type": "string",
-    "named": true
+    "named": false
   },
   {
     "type": "string",
-    "named": false
+    "named": true
   },
   {
     "type": "subtraction",
     "named": true
+  },
+  {
+    "type": "true",
+    "named": false
   },
   {
     "type": "type_cast_operator",
