@@ -481,6 +481,10 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "declaration",
           "named": true
         },
@@ -490,6 +494,10 @@
         },
         {
           "type": "else_statement",
+          "named": true
+        },
+        {
+          "type": "for_loop",
           "named": true
         },
         {
@@ -510,6 +518,10 @@
         },
         {
           "type": "regex",
+          "named": true
+        },
+        {
+          "type": "semicolon",
           "named": true
         },
         {
@@ -672,11 +684,19 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "declaration",
           "named": true
         },
         {
           "type": "else_statement",
+          "named": true
+        },
+        {
+          "type": "for_loop",
           "named": true
         },
         {
@@ -701,6 +721,10 @@
         },
         {
           "type": "regex",
+          "named": true
+        },
+        {
+          "type": "semicolon",
           "named": true
         },
         {
@@ -1111,11 +1135,11 @@
   },
   {
     "type": "regex",
-    "named": true
+    "named": false
   },
   {
     "type": "regex",
-    "named": false
+    "named": true
   },
   {
     "type": "semicolon",

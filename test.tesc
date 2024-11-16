@@ -8,4 +8,10 @@ test1("./test") {
     } else {
 	println("Goodbye, World!");
     }
+
+    if x {
+	print("Hello, World!")
+    } else {
+	print("Goodbye, World!");
+    }
 }

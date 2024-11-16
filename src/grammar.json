@@ -646,7 +646,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_expression"
+            "name": "_statement"
           },
           {
             "type": "CHOICE",
@@ -703,7 +703,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_expression"
+                "name": "_statement"
               }
             ]
           }

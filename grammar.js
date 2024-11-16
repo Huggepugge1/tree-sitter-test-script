@@ -126,7 +126,7 @@ module.exports = grammar({
     if_statement: $ => prec.left(8, seq(
       $.if_keyword,
       $._expression,
-      $._expression,
+      $._statement,
       optional($.else_statement),
     )),
 
@@ -138,7 +138,7 @@ module.exports = grammar({
       ),
       seq(
         $.else_keyword,
-        $._expression,
+        $._statement,
       ),
     )),
 
