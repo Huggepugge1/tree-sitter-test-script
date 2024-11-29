@@ -425,6 +425,10 @@
           "named": true
         },
         {
+          "type": "constant_with_type",
+          "named": true
+        },
+        {
           "type": "function_call",
           "named": true
         },
@@ -455,9 +459,28 @@
         {
           "type": "unary_expression",
           "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "constant_with_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "colon",
+          "named": true
         },
         {
-          "type": "variable_with_type",
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "type",
           "named": true
         }
       ]
@@ -1293,6 +1316,10 @@
   },
   {
     "type": "const_keyword",
+    "named": true
+  },
+  {
+    "type": "constant",
     "named": true
   },
   {

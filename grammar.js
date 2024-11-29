@@ -125,6 +125,12 @@ module.exports = grammar({
       $.type,
     ),
 
+    constant_with_type: $ => seq(
+      $.constant,
+      $.colon,
+      $.type,
+    ),
+
     _declaration: $ => choice(
       $.const_declaration,
       $.let_declaration,
@@ -132,7 +138,7 @@ module.exports = grammar({
 
     const_declaration: $ => seq(
       $.const_keyword,
-      $.variable_with_type,
+      $.constant_with_type,
       $.assignment_operator,
       $._expression,
     ),

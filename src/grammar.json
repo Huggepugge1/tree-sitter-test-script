@@ -643,6 +643,23 @@
         }
       ]
     },
+    "constant_with_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "constant"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "colon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "type"
+        }
+      ]
+    },
     "_declaration": {
       "type": "CHOICE",
       "members": [
@@ -665,7 +682,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "variable_with_type"
+          "name": "constant_with_type"
         },
         {
           "type": "SYMBOL",
