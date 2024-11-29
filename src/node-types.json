@@ -617,7 +617,93 @@
   {
     "type": "function",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "built_in_function_call",
+          "named": true
+        },
+        {
+          "type": "close_paren",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "for_loop",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_keyword",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "open_paren",
+          "named": true
+        },
+        {
+          "type": "parameter_list",
+          "named": true
+        },
+        {
+          "type": "regex",
+          "named": true
+        },
+        {
+          "type": "semicolon",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "function_call",
@@ -636,7 +722,7 @@
           "named": true
         },
         {
-          "type": "function",
+          "type": "identifier",
           "named": true
         },
         {
@@ -645,11 +731,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "identifier",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "if_statement",
@@ -810,6 +891,21 @@
     }
   },
   {
+    "type": "parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "variable_with_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -818,6 +914,14 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "declaration",
+          "named": true
+        },
+        {
+          "type": "function",
+          "named": true
+        },
         {
           "type": "test",
           "named": true
@@ -902,20 +1006,11 @@
           "named": true
         },
         {
-          "type": "test_identifier",
-          "named": true
-        },
-        {
           "type": "unary_expression",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "test_identifier",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "type",
@@ -1077,11 +1172,19 @@
     "named": true
   },
   {
+    "type": "function_keyword",
+    "named": true
+  },
+  {
     "type": "greater_than_operator",
     "named": true
   },
   {
     "type": "greater_than_or_equal_operator",
+    "named": true
+  },
+  {
+    "type": "identifier",
     "named": true
   },
   {
@@ -1166,11 +1269,11 @@
   },
   {
     "type": "string",
-    "named": false
+    "named": true
   },
   {
     "type": "string",
-    "named": true
+    "named": false
   },
   {
     "type": "subtraction",

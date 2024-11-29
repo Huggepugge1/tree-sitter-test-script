@@ -11,27 +11,34 @@ module.exports = grammar({
   name: "test_script",
 
   rules: {
-    source_file: $ => repeat($.test),
-
-    test: $ => seq(
-      $.test_identifier,
-      $.open_paren,
-      $.string,
-      $.close_paren,
-      $._statement
+    source_file: $ => repeat(
+      choice(
+        $.function,
+        $.test,
+        $.declaration,
+      )
     ),
 
     function: $ => seq(
       $.function_keyword,
+      $.identifier,
       $.open_paren,
       $.parameter_list,
       $.close_paren,
       $._statement
     ),
 
-    $parameter_list: $ => seq(
+    test: $ => seq(
+      $.identifier,
+      $.open_paren,
+      $.string,
+      $.close_paren,
+      $._statement
+    ),
+
+    parameter_list: $ => seq(
       $.variable_with_type,
-      repeat(seq(',', $.identifier)),
+      repeat(seq(',', $.variable_with_type)),
     ),
 
     _statement: $ => choice(
@@ -63,7 +70,7 @@ module.exports = grammar({
     )),
 
     function_call: $ => seq(
-      $.function,
+      $.identifier,
       $.open_paren,
       optional($.argument_list),
       $.close_paren,
@@ -185,9 +192,7 @@ module.exports = grammar({
       $.close_brace,
     ),
 
-    identifier: $ => /[a-zA-Z_][\w\d_]*/,
-    test_identifier: $ => /[a-zA-Z_][\w\d_]*/,
-    function: $ => /[a-zA-Z_][\w\d_]*/,
+    identifier:      $ => /[a-zA-Z_][\w\d_]*/,
 
     string: $ => /"([^"\\]|\\.)*"/,
     number: $ => /\d+/,

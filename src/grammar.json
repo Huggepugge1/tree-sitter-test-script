@@ -5,16 +5,58 @@
     "source_file": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "test"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "function"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "test"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "declaration"
+          }
+        ]
       }
+    },
+    "function": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "function_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "open_paren"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "parameter_list"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "close_paren"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_statement"
+        }
+      ]
     },
     "test": {
       "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "test_identifier"
+          "name": "identifier"
         },
         {
           "type": "SYMBOL",
@@ -34,11 +76,7 @@
         }
       ]
     },
-    "function": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z_][\\w\\d_]*"
-    },
-    "$parameter_list": {
+    "parameter_list": {
       "type": "SEQ",
       "members": [
         {
@@ -56,7 +94,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "identifier"
+                "name": "variable_with_type"
               }
             ]
           }
@@ -163,7 +201,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "function"
+          "name": "identifier"
         },
         {
           "type": "SYMBOL",
@@ -831,10 +869,6 @@
       ]
     },
     "identifier": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z_][\\w\\d_]*"
-    },
-    "test_identifier": {
       "type": "PATTERN",
       "value": "[a-zA-Z_][\\w\\d_]*"
     },

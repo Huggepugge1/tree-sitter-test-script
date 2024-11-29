@@ -1,8 +1,8 @@
 fn fib(n: int) {
     if n <= 1 {
-	return n;
+	n;
     } else {
-	return fib(n - 1) + fib(n - 2);
+	fib(n - 1) + fib(n - 2);
     }
 }
 
@@ -18,7 +18,7 @@ test1("./test") {
     }
 
     if x {
-	print("Hello, World!")
+	print("Hello, World!");
     } else {
 	print("Goodbye, World!");
     }
