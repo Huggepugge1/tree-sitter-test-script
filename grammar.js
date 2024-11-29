@@ -15,13 +15,13 @@ module.exports = grammar({
       choice(
         $.function,
         $.test,
-        $.declaration,
+        seq($.declaration, $.semicolon),
       )
     ),
 
     function: $ => seq(
       $.function_keyword,
-      $.identifier,
+      $.function_name,
       $.open_paren,
       $.parameter_list,
       $.close_paren,
@@ -29,7 +29,7 @@ module.exports = grammar({
     ),
 
     test: $ => seq(
-      $.identifier,
+      $.test_name,
       $.open_paren,
       $.string,
       $.close_paren,
@@ -192,7 +192,9 @@ module.exports = grammar({
       $.close_brace,
     ),
 
-    identifier:      $ => /[a-zA-Z_][\w\d_]*/,
+    identifier:    $ => /[a-zA-Z_][\w\d_]*/,
+    test_name:     $ => /[a-zA-Z_][\w\d_]*/,
+    function_name: $ => /[a-zA-Z_][\w\d_]*/,
 
     string: $ => /"([^"\\]|\\.)*"/,
     number: $ => /\d+/,

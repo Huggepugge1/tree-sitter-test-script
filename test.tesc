@@ -1,3 +1,5 @@
+const thing: int = 1;
+
 fn fib(n: int) {
     if n <= 1 {
 	n;

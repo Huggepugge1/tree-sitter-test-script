@@ -667,6 +667,10 @@
           "named": true
         },
         {
+          "type": "function_name",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -731,6 +735,16 @@
         }
       ]
     }
+  },
+  {
+    "type": "function_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "if_statement",
@@ -923,6 +937,10 @@
           "named": true
         },
         {
+          "type": "semicolon",
+          "named": true
+        },
+        {
           "type": "test",
           "named": true
         }
@@ -1006,11 +1024,20 @@
           "named": true
         },
         {
+          "type": "test_name",
+          "named": true
+        },
+        {
           "type": "unary_expression",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "test_name",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "type",
@@ -1181,10 +1208,6 @@
   },
   {
     "type": "greater_than_or_equal_operator",
-    "named": true
-  },
-  {
-    "type": "identifier",
     "named": true
   },
   {

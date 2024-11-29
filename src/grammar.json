@@ -16,8 +16,17 @@
             "name": "test"
           },
           {
-            "type": "SYMBOL",
-            "name": "declaration"
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "declaration"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "semicolon"
+              }
+            ]
           }
         ]
       }
@@ -31,7 +40,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "function_name"
         },
         {
           "type": "SYMBOL",
@@ -56,7 +65,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "test_name"
         },
         {
           "type": "SYMBOL",
@@ -869,6 +878,14 @@
       ]
     },
     "identifier": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_][\\w\\d_]*"
+    },
+    "test_name": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_][\\w\\d_]*"
+    },
+    "function_name": {
       "type": "PATTERN",
       "value": "[a-zA-Z_][\\w\\d_]*"
     },
