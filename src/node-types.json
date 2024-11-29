@@ -410,10 +410,6 @@
           "named": true
         },
         {
-          "type": "colon",
-          "named": true
-        },
-        {
           "type": "declaration",
           "named": true
         },
@@ -442,11 +438,11 @@
           "named": true
         },
         {
-          "type": "type",
+          "type": "unary_expression",
           "named": true
         },
         {
-          "type": "unary_expression",
+          "type": "variable_with_type",
           "named": true
         }
       ]
@@ -998,6 +994,29 @@
     }
   },
   {
+    "type": "variable_with_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "colon",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": ",",
     "named": false
   },
@@ -1135,11 +1154,11 @@
   },
   {
     "type": "regex",
-    "named": false
+    "named": true
   },
   {
     "type": "regex",
-    "named": true
+    "named": false
   },
   {
     "type": "semicolon",

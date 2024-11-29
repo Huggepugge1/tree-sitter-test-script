@@ -21,6 +21,19 @@ module.exports = grammar({
       $._statement
     ),
 
+    function: $ => seq(
+      $.function_keyword,
+      $.open_paren,
+      $.parameter_list,
+      $.close_paren,
+      $._statement
+    ),
+
+    $parameter_list: $ => seq(
+      $.variable_with_type,
+      repeat(seq(',', $.identifier)),
+    ),
+
     _statement: $ => choice(
       seq(
         $._expression,
@@ -99,11 +112,15 @@ module.exports = grammar({
       
     ),
 
-    declaration: $ => seq(
-      $.assignment_keyword,
+    variable_with_type: $ => seq(
       $.identifier,
       $.colon,
       $.type,
+    ),
+
+    declaration: $ => seq(
+      $.assignment_keyword,
+      $.variable_with_type,
       $.assignment_operator,
       $._expression,
     ),
@@ -156,6 +173,7 @@ module.exports = grammar({
       $._expression,
     ),
 
+    function_keyword: $ => 'fn',
     if_keyword: $ => 'if',
     else_keyword: $ => 'else',
     for_keyword: $ => 'for',

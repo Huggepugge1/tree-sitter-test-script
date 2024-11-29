@@ -34,6 +34,35 @@
         }
       ]
     },
+    "function": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_][\\w\\d_]*"
+    },
+    "$parameter_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "variable_with_type"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "_statement": {
       "type": "CHOICE",
       "members": [
@@ -550,13 +579,9 @@
         }
       ]
     },
-    "declaration": {
+    "variable_with_type": {
       "type": "SEQ",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "assignment_keyword"
-        },
         {
           "type": "SYMBOL",
           "name": "identifier"
@@ -568,6 +593,19 @@
         {
           "type": "SYMBOL",
           "name": "type"
+        }
+      ]
+    },
+    "declaration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "assignment_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "variable_with_type"
         },
         {
           "type": "SYMBOL",
@@ -752,6 +790,10 @@
         }
       ]
     },
+    "function_keyword": {
+      "type": "STRING",
+      "value": "fn"
+    },
     "if_keyword": {
       "type": "STRING",
       "value": "if"
@@ -793,10 +835,6 @@
       "value": "[a-zA-Z_][\\w\\d_]*"
     },
     "test_identifier": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z_][\\w\\d_]*"
-    },
-    "function": {
       "type": "PATTERN",
       "value": "[a-zA-Z_][\\w\\d_]*"
     },
