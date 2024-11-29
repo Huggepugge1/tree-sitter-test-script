@@ -20,7 +20,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "declaration"
+                "name": "const_declaration"
               },
               {
                 "type": "SYMBOL",
@@ -152,7 +152,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "declaration"
+            "name": "_declaration"
           },
           {
             "type": "SYMBOL",
@@ -643,12 +643,25 @@
         }
       ]
     },
-    "declaration": {
+    "_declaration": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "const_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "let_declaration"
+        }
+      ]
+    },
+    "const_declaration": {
       "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "assignment_keyword"
+          "name": "const_keyword"
         },
         {
           "type": "SYMBOL",
@@ -664,16 +677,24 @@
         }
       ]
     },
-    "assignment_keyword": {
-      "type": "CHOICE",
+    "let_declaration": {
+      "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "let"
+          "type": "SYMBOL",
+          "name": "let_keyword"
         },
         {
-          "type": "STRING",
-          "value": "const"
+          "type": "SYMBOL",
+          "name": "variable_with_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "assignment_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
         }
       ]
     },
@@ -841,6 +862,14 @@
       "type": "STRING",
       "value": "fn"
     },
+    "const_keyword": {
+      "type": "STRING",
+      "value": "const"
+    },
+    "let_keyword": {
+      "type": "STRING",
+      "value": "let"
+    },
     "if_keyword": {
       "type": "STRING",
       "value": "if"
@@ -879,7 +908,11 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "[a-zA-Z_][\\w\\d_]*"
+      "value": "[a-z_][a-zA-Z\\d_]*"
+    },
+    "constant": {
+      "type": "PATTERN",
+      "value": "[A-Z_][A-Z\\d_]*"
     },
     "test_name": {
       "type": "PATTERN",

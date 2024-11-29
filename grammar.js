@@ -15,7 +15,7 @@ module.exports = grammar({
       choice(
         $.function,
         $.test,
-        seq($.declaration, $.semicolon),
+        seq($.const_declaration, $.semicolon),
       )
     ),
 
@@ -53,7 +53,7 @@ module.exports = grammar({
     ),
 
     _expression: $ => prec.left(7, choice(
-      $.declaration,
+      $._declaration,
       $.assignment,
       $.identifier,
       $.string,
@@ -125,14 +125,24 @@ module.exports = grammar({
       $.type,
     ),
 
-    declaration: $ => seq(
-      $.assignment_keyword,
+    _declaration: $ => choice(
+      $.const_declaration,
+      $.let_declaration,
+    ),
+
+    const_declaration: $ => seq(
+      $.const_keyword,
       $.variable_with_type,
       $.assignment_operator,
       $._expression,
     ),
-    
-    assignment_keyword: $ => choice('let', 'const'),
+
+    let_declaration: $ => seq(
+      $.let_keyword,
+      $.variable_with_type,
+      $.assignment_operator,
+      $._expression,
+    ),
 
     type: $ => choice(
       'string',
@@ -181,9 +191,14 @@ module.exports = grammar({
     ),
 
     function_keyword: $ => 'fn',
+
+    const_keyword: $ => 'const',
+    let_keyword: $ => 'let',
+
     if_keyword: $ => 'if',
     else_keyword: $ => 'else',
     for_keyword: $ => 'for',
+
     in_operator: $ => 'in',
 
     block: $ => seq(
@@ -192,7 +207,8 @@ module.exports = grammar({
       $.close_brace,
     ),
 
-    identifier:    $ => /[a-zA-Z_][\w\d_]*/,
+    identifier:    $ => /[a-z_][a-zA-Z\d_]*/,
+    constant:      $ => /[A-Z_][A-Z\d_]*/,
     test_name:     $ => /[a-zA-Z_][\w\d_]*/,
     function_name: $ => /[a-zA-Z_][\w\d_]*/,
 
